@@ -104,4 +104,8 @@
 
 ### Completed
 
-- Backend
+#### REST APIs
+
+- User - Create, edit
+- P5 (Points given) - Create, read, delete
+- Reward (Points received) - Read
