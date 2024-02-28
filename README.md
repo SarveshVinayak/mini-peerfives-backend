@@ -19,7 +19,7 @@
 **1. After cloning the backend code**
 
 - cd solvative-backend
-- npm ci
+- npm i
 - npm start
 - You can check the response using postman at [localhost](http://localhost:5000)
 
