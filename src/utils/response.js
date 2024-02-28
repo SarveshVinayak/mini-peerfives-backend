@@ -13,10 +13,10 @@ const {
 const successResponse = (
   req,
   res,
-  statusCode = STATUS_CODES.SUCCESS,
-  message = SUCCESS_MESSAGES.SUCCESS,
   data,
-  value
+  value,
+  statusCode = STATUS_CODES.SUCCESS,
+  message = SUCCESS_MESSAGES.SUCCESS
 ) => {
   const result = {
     statusCode,

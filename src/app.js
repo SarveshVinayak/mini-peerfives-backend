@@ -9,10 +9,14 @@ const {
   requestHandler,
   routeNotFoundHandler,
 } = require("./middlewares/common");
+const i18n = require("./middlewares/i18n");
 
 const app = express();
 
 app.use(helmet());
+
+//initialize i18n middleware
+app.use(i18n.init);
 
 app.use((req, res, next) => {
   requestHandler(req, res, next);

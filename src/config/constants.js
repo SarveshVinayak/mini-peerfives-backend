@@ -2,7 +2,7 @@ const Joi = require("joi");
 const { objectId } = require("../validations/customValidation");
 
 exports.JOI = {
-  LIMIT: Joi.number().default(10),
+  LIMIT: Joi.number().default(50),
   PAGE: Joi.number().default(0),
   OBJECTID: Joi.string().custom(objectId).required(),
 };
@@ -16,6 +16,8 @@ exports.ERROR_MESSAGES = {
   VALIDATION_FAILED: "Validation Failed, Kindly check your parameters",
   SERVER_ERROR: "Something went wrong, Please try again.",
   USER_NOT_FOUND: "User not found",
+  INSUFFICIENT_BALANCE: "Insufficient P5 Balance.",
+  REWARD_NOT_FOUND: "Reward not found",
 };
 
 exports.STATUS_CODES = {
