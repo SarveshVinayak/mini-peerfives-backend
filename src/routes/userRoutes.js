@@ -15,6 +15,9 @@ router.post(
   userController.createUser
 );
 
+//create new user
+router.put("/user", validate(userValidation.editUser), userController.editUser);
+
 //get single user details
 router.get("/:id", validate(userValidation.getUser), userController.getUser);
 

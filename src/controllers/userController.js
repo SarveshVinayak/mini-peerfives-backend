@@ -17,6 +17,11 @@ exports.getUser = catchAsync(async (req, res) => {
   return successResponse(req, res, user);
 });
 
+exports.editUser = catchAsync(async (req, res) => {
+  const user = await userService.editUser(req.params, req.body);
+  return successResponse(req, res, user);
+});
+
 exports.rewardsUserList = catchAsync(async (req, res) => {
   const users = await userService.rewardsUserList(req.params);
   return createResponse(req, res, users);

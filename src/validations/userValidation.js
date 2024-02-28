@@ -20,6 +20,15 @@ exports.getUser = {
   }),
 };
 
+exports.editUser = {
+  params: Joi.object().keys({
+    id: JOI.OBJECTID,
+  }),
+  body: Joi.object().keys({
+    name: Joi.string().required(),
+  }),
+};
+
 exports.rewardsUserList = {
   params: Joi.object().keys({
     id: JOI.OBJECTID,

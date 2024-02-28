@@ -28,6 +28,23 @@ exports.getUser = async ({ id }) => {
   return user;
 };
 
+exports.editUser = async ({ id }, { name }) => {
+  const user = await User.findByIdAndUpdate(
+    id,
+    { $set: { name } },
+    { new: true, lean: true }
+  ).lean();
+
+  if (!user) {
+    throw new AuthFailedError(
+      ERROR_MESSAGES.USER_NOT_FOUND,
+      STATUS_CODES.ACTION_FAILED
+    );
+  }
+
+  return user;
+};
+
 exports.rewardsUserList = async ({ id }) => {
   const users = await User.find({ _id: { $ne: id } });
 
